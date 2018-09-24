@@ -13,7 +13,7 @@ int main(void)
 	{
 		PORTB ^= 0b00100000;  //toggle port B
 		//PORTB ^= 0x10;  //toggle port B
-		_delay_ms(100); //wait 1 second
+		_delay_ms(500); //wait 1 second
 		USART_StrTx("Hello World\n");
 		
 	}
