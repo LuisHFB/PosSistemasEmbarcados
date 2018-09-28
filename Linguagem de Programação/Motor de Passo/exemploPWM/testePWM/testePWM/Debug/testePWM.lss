@@ -25,9 +25,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  10 .debug_str    000003ca  00000000  00000000  00001550  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000070  00000000  00000000  0000191a  2**0
+ 11 .debug_loc    0000006e  00000000  00000000  0000191a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000028  00000000  00000000  0000198a  2**0
+ 12 .debug_ranges 00000028  00000000  00000000  00001988  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -104,7 +104,7 @@ int main(void)
   98:	0e 94 76 00 	call	0xec	; 0xec <PwmD6AInit>
 		
 		PwmD6ASetDuty(i);
-		_delay_ms(5);
+		_delay_ms(2);
 		i++;
 		if(i>255) i=0;
 		(PORTB == 0x08) ? (PORTB = 0x01) : (PORTB = PORTB<<1);
@@ -124,13 +124,13 @@ int main(void)
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  aa:	8f e1       	ldi	r24, 0x1F	; 31
-  ac:	9e e4       	ldi	r25, 0x4E	; 78
+  aa:	8f e3       	ldi	r24, 0x3F	; 63
+  ac:	9f e1       	ldi	r25, 0x1F	; 31
   ae:	01 97       	sbiw	r24, 0x01	; 1
   b0:	f1 f7       	brne	.-4      	; 0xae <main+0x1e>
   b2:	00 c0       	rjmp	.+0      	; 0xb4 <main+0x24>
   b4:	00 00       	nop
-		_delay_ms(5);
+		_delay_ms(2);
 		i++;
   b6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <_edata>
   ba:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <_edata+0x1>
@@ -144,7 +144,7 @@ int main(void)
     {
 		
 		PwmD6ASetDuty(i);
-		_delay_ms(5);
+		_delay_ms(2);
 		i++;
   c8:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <_edata+0x1>
   cc:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <_edata>

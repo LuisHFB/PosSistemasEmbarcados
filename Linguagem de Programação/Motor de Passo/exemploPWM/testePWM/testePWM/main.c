@@ -23,7 +23,7 @@ int main(void)
     {
 		
 		PwmD6ASetDuty(i);
-		_delay_ms(5);
+		_delay_ms(2);
 		i++;
 		if(i>255) i=0;
 		(PORTB == 0x08) ? (PORTB = 0x01) : (PORTB = PORTB<<1);

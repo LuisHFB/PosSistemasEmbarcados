@@ -466,10 +466,10 @@ END GROUP
  .debug_str     0x000003bf        0xb pwm.o
                                 0x1a4 (size before relaxing)
 
-.debug_loc      0x00000000       0x70
+.debug_loc      0x00000000       0x6e
  *(.debug_loc)
- .debug_loc     0x00000000       0x48 main.o
- .debug_loc     0x00000048       0x28 pwm.o
+ .debug_loc     0x00000000       0x46 main.o
+ .debug_loc     0x00000046       0x28 pwm.o
 
 .debug_macinfo
  *(.debug_macinfo)
