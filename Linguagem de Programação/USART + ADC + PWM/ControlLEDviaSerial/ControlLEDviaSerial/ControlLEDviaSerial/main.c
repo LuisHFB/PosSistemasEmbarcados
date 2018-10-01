@@ -67,7 +67,7 @@ ISR(USART_RX_vect) //#Interrupt.h
 	if(recebido == '[' && contabuffer == 0)
 	{
 		buffer[0] = '[';
-		contabuffer++;
+		contabuffer++; //[4576735683568537683
 	}
 	
 	else if(buffer[0] == '[' && contabuffer > 0 && recebido != '[')
