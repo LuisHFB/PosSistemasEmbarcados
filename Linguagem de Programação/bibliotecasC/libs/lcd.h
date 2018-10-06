@@ -2,7 +2,7 @@
 #define __LCD_H__
 
 #include "defs.h"
-#include <avr\io.h>
+#include <avr/io.h>
 
 #define LCD_DATA4_TRIS   (ddrd.bit4)
 #define LCD_DATA4_IO     (portd.bit4)

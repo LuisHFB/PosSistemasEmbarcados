@@ -1,11 +1,7 @@
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#include "usart.h"
-#include "adc.h"
 #include "lcd.h"
 #include <util/delay.h>
-#include <stdio.h>
-#include <stdint.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
 
 
 //****************************Funções
@@ -44,7 +40,7 @@ void LCD_Write_Data(unsigned char RS, unsigned char Data)
 
 }
 
-void LCD_Enable()  //INSTRUÇÃO DE CLOCK PARA O LCD
+void LCD_Enable(void)  //INSTRUÇÃO DE CLOCK PARA O LCD
 {
   _delay_us(40);
   LCD_EN_IO = 1;
@@ -102,7 +98,8 @@ void DisplayLCD_Init()
 }
 
 //DisplayLCD_Out(1,2, "BOM DIA");
-void DisplayLCD_Out(unsigned char Linha, unsigned char Coluna, unsigned char *TextoLCD)
+void DisplayLCD_Out(unsigned char Linha, unsigned char Coluna,
+                    unsigned char *TextoLCD)
 {
   LCD_RS_IO = 0; //TRATAR PRIMEIRO AS COORDENADAS X E Y
   switch(Linha)
